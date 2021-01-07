@@ -132,6 +132,13 @@ class _BaniContentPageState extends State<BaniContentPage> {
                     },
                   ),
                 ),
+                SettingsTile(
+                  leading: Icon(Icons.font_download),
+                  title: 'Home Screen',
+                  trailing: new FlatButton(
+                    onPressed: () =>   Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage()));
+                  ),
+                ),
               ]),
               SettingsSection(
                 title: 'App Settings',

@@ -14,6 +14,7 @@ loadJson(String filepath) async {
 
 class ApiClass {
 
+  var hukam ;
   FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
 
 
@@ -89,10 +90,19 @@ class ApiClass {
   }
 
   Future<Hukam> getHukam() async {
-    var url = 'https://dev-api.gurbaninow.com/v2/hukamnama/today';
-    Response response = await get(url);
-    Map<String, dynamic> json_data = jsonDecode(response.body);
-    return Hukam.fromJson(json_data);
+    if(hukam == null ) {
+      var url = 'https://dev-api.gurbaninow.com/v2/hukamnama/today';
+      Response response = await get(url);
+      Map<String, dynamic> json_data = jsonDecode(response.body);
+      hukam = Hukam.fromJson(json_data);
+      print(hukam.toString());
+      return hukam;
+    }
+    else{
+      print(hukam.toString()+"............");
+      return hukam;
+
+    }
   }
 
 }

@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sundargutka/custompageroute.dart';
 import 'package:sundargutka/home.dart';
 import 'package:sundargutka/hukam.dart';
-import 'package:get/get.dart';
 import 'bloc/home_bloc.dart';
 import 'bloc/theme_bloc.dart';
 import 'package:wakelock/wakelock.dart';
