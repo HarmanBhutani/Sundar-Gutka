@@ -4,6 +4,8 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:settings_ui/settings_ui.dart';
 import 'package:sundargutka/bloc/details_bloc.dart';
+import 'package:sundargutka/custompageroute.dart';
+import 'package:sundargutka/main.dart';
 
 import 'bloc/theme_bloc.dart';
 import 'model.dart';
@@ -135,9 +137,8 @@ class _BaniContentPageState extends State<BaniContentPage> {
                 SettingsTile(
                   leading: Icon(Icons.font_download),
                   title: 'Home Screen',
-                  trailing: new FlatButton(
-                    onPressed: () =>   Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage()));
-                  ),
+                  onTap: () => Navigator.push(context,
+                      MyCustomRoute(builder: (_) => HomePage())),
                 ),
               ]),
               SettingsSection(
